@@ -1,5 +1,11 @@
 ﻿//Write a program that calculates factorial of an integer n given by the user.  Please enter a small integer.
-//--so calculate a factorial of only a small integer and give error if it's larger than something?
+//--so calculate a factorial of only a small integer and give error if it's larger than something? 
+//I am unsure if that is a correct interpretation of the assignment. I have written my code so that it
+//asks the user to input a small number (which I've defined as 20) and if this condition is met, it executes
+//otherwise it returns an error message. If that is not the goal here, please let me know (and clarify the
+//aim) and I will change it!
+
+//Self Note: perhaps add a while loop to allow user to calculate multiple values in one run of program later
 
 using System;
 
