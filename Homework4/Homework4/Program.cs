@@ -54,10 +54,10 @@ class Homework4
         {
             array[i] = i + 1;
         }
-        // Create new array to populate using array. 
+        // Create new array that will store the factorial values. 
         int[] array2 = new int[userValue];
 
-        // Repopulate the array by using CalculateFactorial.
+        // Populate new array by using CalculateFactorial.
         foreach(int x in array)
         {
             array2[x - 1] = f.CalculateFactorial(x);
