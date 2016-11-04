@@ -8,32 +8,7 @@
 using System;
 using System.Linq;
 
-class CompareGuess //takes the user array and compares it to the target array
-{
 
-    public int[] Compare(int[] guess, int[] target)
-    {
-        // initialize a comparison array
-        int i = 0;
-        int[] compare_array = new int[guess.Length];
-
-        // build comparison array by comparing user's guess with target
-        foreach (int x in guess)
-        {
-            if (x == target[i])
-            {
-                compare_array[i] = x;
-                i++;
-            }
-            else
-            {
-                compare_array[i] = 0;
-                i++;
-            }
-        }
-        return compare_array;
-    }
-}
 class Homework4Optional3AsGame
 {
     static void Main()
