@@ -38,8 +38,6 @@ class Homework4Optional3AsGame
 {
     static void Main()
     {
-        //Initiate CompareGuess class
-        CompareGuess cg = new CompareGuess();
 
         //Initiate target array from random values
         int Min = 1;
@@ -73,8 +71,25 @@ class Homework4Optional3AsGame
             // Convert the guess to an array
             int[] userGuess = userInput.Select(c => c - '0').ToArray(); // magically converts a string of integers to an array
 
-            // Compare guess array to target array. This returns an array of correct/incorrect guesses
-            int[] compare_array = cg.Compare(userGuess, target);
+            // initialize a comparison array
+            int i = 0;
+            int[] compare_array = new int[userGuess.Length];
+
+            // build comparison array by comparing user's guess with target
+            foreach (int x in userGuess)
+            {
+                if (x == target[i])
+                {
+                    compare_array[i] = x;
+                    i++;
+                }
+                else
+                {
+                    compare_array[i] = 0;
+                    i++;
+                }
+            }
+            // Write the comparison array to the user
             foreach (int x in compare_array)
             {
                 Console.Write(x);
