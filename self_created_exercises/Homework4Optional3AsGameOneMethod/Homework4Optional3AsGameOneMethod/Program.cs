@@ -1,4 +1,6 @@
-﻿// This program creates a random array of 5 single digit numbers, then asks the user to guess it
+﻿// (The Title of this implies it is using a method, but it's actually using a function)
+
+// This program creates a random array of 5 single digit numbers, then asks the user to guess it
 // I had to use a few new things to create it.
 // Random was easy to understand since it's not that different from what I've done in Python with the random library
 // But the others are a bit more confusing. I'm not going to delve too deeply into them right now
