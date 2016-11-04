@@ -1,22 +1,23 @@
-﻿// Create an array of 5 random numbers 
-// Ask the user to guess values of the array
-// Return values of array with 0 or correct guesses
-// Continue until user has guessed all
-// Display final array once all guessed along with number of times it took to get there
+﻿// This program creates a random array of 5 single digit numbers, then asks the user to guess it
+// I had to use a few new things to create it.
+// Random was easy to understand since it's not that different from what I've done in Python with the random library
+// But the others are a bit more confusing. I'm not going to delve too deeply into them right now because I don't want to get too far off track from the class.
+// So for now I am just considering them MAGIC
+
 using System;
 using System.Linq;
 
 class CompareGuess //takes the user array and compares it to the target array
 {
-   
-    public int[] Compare(int[]guess, int[]target)
+
+    public int[] Compare(int[] guess, int[] target)
     {
         // initialize a comparison array
         int i = 0;
-        int[] compare_array = new int [guess.Length];
+        int[] compare_array = new int[guess.Length];
 
         // build comparison array by comparing user's guess with target
-        foreach(int x in guess)
+        foreach (int x in guess)
         {
             if (x == target[i])
             {
@@ -30,7 +31,7 @@ class CompareGuess //takes the user array and compares it to the target array
             }
         }
         return compare_array;
-    } 
+    }
 }
 class Homework4Optional3AsGame
 {
@@ -55,7 +56,9 @@ class Homework4Optional3AsGame
         Console.WriteLine("I have a list of numbers.");
         Console.WriteLine("But I'm not going to tell you the numbers! Can you figure it out?");
         Console.WriteLine("Give me a list of 5 single digit numbers without commas or spaces (eg '12345') and I'll show you which ones are correct.");
-        Console.WriteLine("If it says 0, you got it wrong. Note! Value must be in correct place to be shown.");
+        Console.WriteLine("If it says 0, you got it wrong. Note! Value must be in correct place to be shown, otherwise they will return as 0 even if they are in the list");
+        Console.WriteLine("For example, if my list is 12345 and you guess 13542, I will return 10000 to you, as 1 was the only number in the correct location");
+
 
         // Start the game loop
         bool HaveAnswer = false;
@@ -67,25 +70,25 @@ class Homework4Optional3AsGame
             string userInput = Console.ReadLine();
 
             // Convert the guess to an array
-            int[] userGuess = userInput.Select(c => c - '0').ToArray();
+            int[] userGuess = userInput.Select(c => c - '0').ToArray(); // magically converts a string of integers to an array
 
             // Compare guess array to target array. This returns an array of correct/incorrect guesses
             int[] compare_array = cg.Compare(userGuess, target);
-            foreach(int x in compare_array)
+            foreach (int x in compare_array)
             {
                 Console.Write(x);
             }
             guessCount++;
 
             // Evaluate to see if guess is correct
-            bool isEqual = Enumerable.SequenceEqual(compare_array, target);
+            bool isEqual = Enumerable.SequenceEqual(compare_array, target); // magically evaluates if the contents of the two arrays are equal
             if (isEqual)
             {
                 // For a correct guess, return congrats + guess count to user
                 Console.WriteLine("\n" + "You got it! It took you {0} tries", guessCount);
                 HaveAnswer = true;
             }
-            
+
         }
         Console.ReadLine(); // Hold on screen.
     }
